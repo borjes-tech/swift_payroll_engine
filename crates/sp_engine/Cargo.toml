@@ -1,0 +1,10 @@
+[package]
+name = "sp_engine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rust_decimal = "1.42.0"
+serde = { version = "1.0.228", features = ["derive"] }
+true = "0.1.0"
+uuid = "1.23.1"
