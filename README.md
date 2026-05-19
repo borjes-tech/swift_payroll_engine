@@ -1,3 +1,10 @@
-# Swift Payroll
+# Swift Payroll Engine
 
 A high-performance, framework-agnostic payroll computation engine built in Rust. Designed to replace slow, eval-based payroll engines with compiled, parallel rule execution. Supports Python bindings via PyO3 for drop-in integration with any HR system.
+
+## Components:
+- server: Both gRPC & RESTFUL API
+- cli: Written in clap
+- engine: The core Rust library that powers the payroll computation
+- dsl: Domain-specific language for defining payroll rules
+- python bindings: Python bindings via PyO3 for drop-in integration with any HR system
