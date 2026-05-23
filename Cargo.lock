@@ -568,6 +568,10 @@ dependencies = [
 [[package]]
 name = "sp_dsl"
 version = "0.1.0"
+dependencies = [
+ "serde",
+ "true",
+]
 
 [[package]]
 name = "sp_engine"
