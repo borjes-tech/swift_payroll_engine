@@ -1,2 +1,2 @@
-pub mod calculate;
+pub mod calculator;
 pub mod models;
