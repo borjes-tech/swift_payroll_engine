@@ -2,13 +2,15 @@
 resolver = "2"
 members = [
     "crates/sp_dsl",
-    "crates/sp_engine",
-    "sp_cli",
-    "sp_server",
+    "crates/sp_engine", "swift_payroll",
 ]
-default-members = ["sp_cli", "sp_server"]
 
 [workspace.package]
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
+
+
+[workspace.dependencies]
+sp_engine = { path = "./crates/sp_engine" }
+sp_dsl = { path = "./crates/sp_dsl" }
