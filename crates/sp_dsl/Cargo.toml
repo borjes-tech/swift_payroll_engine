@@ -4,5 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+cel = "0.13.0"
+rhai = "1.25.1"
 serde = { version = "1.0.228", features = ["derive"] }
 true = "0.1.0"

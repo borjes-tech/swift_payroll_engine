@@ -4,6 +4,8 @@ use serde::{Deserialize, Serialize};
 pub enum DslType {
     OdooHRMS,
     FrappeHRMS,
+    Rhai,
+    CEL,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
