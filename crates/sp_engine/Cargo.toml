@@ -4,7 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+sp_dsl = { path = "../sp_dsl" }
 rust_decimal = "1.42.0"
 serde = { version = "1.0.228", features = ["derive"] }
 true = "0.1.0"
 uuid = "1.23.1"
+thiserror = "2.0.18"

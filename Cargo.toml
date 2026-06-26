@@ -2,7 +2,8 @@
 resolver = "2"
 members = [
     "crates/sp_dsl",
-    "crates/sp_engine", "swift_payroll",
+    "crates/sp_engine",
+    "swift_payroll",
 ]
 
 [workspace.package]
@@ -13,3 +14,4 @@ license = "MIT"
 
 [workspace.dependencies]
 sp_engine = { path = "./crates/sp_engine" }
+sp_dsl = { path = "./crates/sp_dsl" }
