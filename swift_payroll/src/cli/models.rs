@@ -4,9 +4,6 @@ use serde::Deserialize;
 pub struct RawEmployee {
     pub employee_id: String,
     pub full_name: String,
-    pub tax_identification_number: String,
-    pub sshfc_number: String,
-    pub contract_type: String,
     pub base_salary: rust_decimal::Decimal,
     pub allowances: RawAllowance,
     pub deductions: Vec<RawDeduction>,
@@ -24,8 +21,6 @@ pub struct RawAllowance {
 pub struct RawDeduction {
     pub id: String,
     pub label: String,
-    #[serde(rename = "type")]
-    pub ded_type: String,
     pub engine: String,
     pub expression: Option<String>,
     pub amount: Option<rust_decimal::Decimal>,

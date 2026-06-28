@@ -26,18 +26,20 @@ impl CalculationContext {
         for emp_context in &self.emp_contexts {
             let gross_salary = emp_context.calculate_gross();
             let mut deductions = emp_context.deductions.clone();
-            
+
             let mut total_deduction = rust_decimal::Decimal::new(0, 0);
             for d in deductions.iter_mut() {
                 if let Some(rule) = &d.dsl_expr {
-                    let amount = rule.evaluate(gross_salary).unwrap_or(rust_decimal::Decimal::new(0, 0));
+                    let amount = rule
+                        .evaluate(gross_salary)
+                        .unwrap_or(rust_decimal::Decimal::new(0, 0));
                     d.amount = amount;
                 }
                 total_deduction += d.amount;
             }
 
             let net_salary = gross_salary - total_deduction;
-            
+
             results.push(CalculationResult {
                 gross_salary,
                 net_salary,
@@ -46,4 +48,6 @@ impl CalculationContext {
         }
         Ok(results)
     }
+
+    pub fn evaluate_deductions() {}
 }

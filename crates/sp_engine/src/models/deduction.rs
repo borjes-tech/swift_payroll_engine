@@ -38,6 +38,10 @@ impl EmpDeduction {
     }
 
     pub fn new(name: String, amount: rust_decimal::Decimal) -> Self {
-        Self { name, amount, dsl_expr: None }
+        Self {
+            name,
+            amount,
+            dsl_expr: None,
+        }
     }
 }

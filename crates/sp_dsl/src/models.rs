@@ -33,7 +33,10 @@ pub struct PayrollRuleContext {
 }
 
 impl PayrollRuleContext {
-    pub fn evaluate(&self, gross: rust_decimal::Decimal) -> Result<rust_decimal::Decimal, PayrollRuleError> {
+    pub fn evaluate(
+        &self,
+        gross: rust_decimal::Decimal,
+    ) -> Result<rust_decimal::Decimal, PayrollRuleError> {
         use crate::engines::DslEngineImple;
         match self.dsl_type {
             DslType::OdooHRMS => Ok(rust_decimal::Decimal::new(0, 0)),
@@ -49,7 +52,7 @@ impl PayrollRuleContext {
                 } else {
                     Err(PayrollRuleError::Evaluation(res.error.unwrap_or_default()))
                 }
-            },
+            }
             DslType::CEL => {
                 let engine = crate::engines::cel::CelEngine {
                     name: self.rule_name.clone(),
@@ -61,7 +64,7 @@ impl PayrollRuleContext {
                 } else {
                     Err(PayrollRuleError::Evaluation(res.error.unwrap_or_default()))
                 }
-            },
+            }
         }
     }
 }
