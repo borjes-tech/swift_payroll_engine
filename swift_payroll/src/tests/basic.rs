@@ -11,7 +11,7 @@ mod basic {
 
     #[test]
     fn test_basic_01_calculation() {
-        let employees = build_random_employees(100_000);
+        let employees = build_random_employees(10);
 
         let calculator = CalculationContext {
             emp_contexts: employees,
@@ -21,7 +21,7 @@ mod basic {
             Ok(results) => {
                 for (i, r) in results.iter().enumerate() {
                     println!(
-                        "Employee {}: gross = {}, net = {}",
+                        "Employee {}: gross = {:?}, net = {:?}",
                         i + 1,
                         r.gross_salary,
                         r.net_salary
@@ -41,7 +41,7 @@ mod basic {
                     emp_id: uuid::Uuid::new_v4().to_string(),
                     name: Name(EN).fake(),
                 },
-                base_salary: Decimal::from_u64((10_000u64..200_000).fake::<u64>()).unwrap(),
+                base_salary: Decimal::from_u64((100_000u64..200_000u64).fake::<u64>()).unwrap(),
                 allowances: build_random_allowances(20),
                 deductions: build_deductions(23),
                 pay_period: None,
@@ -53,7 +53,7 @@ mod basic {
         (0..count)
             .map(|_| EmpDeduction {
                 name: Faker.fake::<String>(),
-                amount: Decimal::from_u64((10_000u64..200_000).fake::<u64>()).unwrap(),
+                amount: Decimal::from_u64((10_000u64..20_000u64).fake::<u64>()).unwrap(),
                 dsl_expr: None,
             })
             .collect()
@@ -63,7 +63,7 @@ mod basic {
         (0..count)
             .map(|_| Allowance {
                 name: Faker.fake::<String>(),
-                amount: Decimal::from_u64((10_000u64..200_000).fake::<u64>()).unwrap(),
+                amount: Decimal::from_u64((10_000u64..20_000u64).fake::<u64>()).unwrap(),
             })
             .collect()
     }

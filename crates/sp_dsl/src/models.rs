@@ -25,6 +25,11 @@ pub enum DslType {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DlsContext {
+    pub gross_salary: rust_decimal::Decimal,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct PayrollRuleContext {
     pub rule_id: String,
     pub rule_name: String,
